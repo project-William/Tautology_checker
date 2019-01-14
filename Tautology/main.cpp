@@ -5,6 +5,6 @@
 
 int main(){
     Introduction();
-    TautologyChecker(); //ÖØÑÔÊ½¼ì²âº¯Êı
+    TautologyChecker(); 
     return 0;
 }

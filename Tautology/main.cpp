@@ -5,6 +5,6 @@
 
 int main(){
     Introduction();
-    TautologyChecker(); 
+    TautologyChecker();      //重言式检测函数
     return 0;
 }

@@ -11,10 +11,10 @@ typedef struct Node{
     struct Node* left_child;
     struct Node* right_child;
 }*BiTree,BiTreeNode;
-//������ģ�麯��
-void InitBiTree(BiTree& T);               //��ʼ��һ����ͷ���
-void CreateBiTree(Sqstack *s,BiTree& T);  //ͨ����׺����ʽ���б���ʽ����������
-void PostOrderTraverse(BiTree& T);        //�������������
+//二叉树模块函数
+void InitBiTree(BiTree& T);               //初始化一个树头结点
+void CreateBiTree(Sqstack *s,BiTree& T);  //通过后缀表达式进行表达式二叉树构建
+void PostOrderTraverse(BiTree& T);        //后序遍历二叉树
 
 
 
@@ -60,7 +60,7 @@ void CreateBiTree(Sqstack *s,BiTree& T){
     T=new_node;
 }
 
-void PostOrderTraverse(BiTree& T,char* exp_var){
+void PostOrderTraverse(BiTree& T,char* exp_var){         //后序遍历二叉树并将逻辑变量取出
     if(!T)
         return;
     else{
@@ -71,7 +71,7 @@ void PostOrderTraverse(BiTree& T,char* exp_var){
     }
 }
 
-void DiffVar(char*exp_var){
+void DiffVar(char*exp_var){                              //去除重复的逻辑变量
     int i,j,k;
     for(i=0;i<=mk-1;i++){
         for(j=i+1;j<=mk-1;j++){
@@ -86,7 +86,7 @@ void DiffVar(char*exp_var){
     }
 }
 
-void GiveValue(BiTree& T,int* permu_var,int num,int nk){
+void GiveValue(BiTree& T,int* permu_var,int num,int nk){ //给罗基变量赋值
     if(!T)
         return;
     GiveValue(T->left_child,permu_var,num,nk);
@@ -96,8 +96,8 @@ void GiveValue(BiTree& T,int* permu_var,int num,int nk){
     }
 }
 
-int PartCalculate(BiTree& T){
-    BiTree p=T;
+int PartCalculate(BiTree& T){                           //单次布尔排列的逻辑表达式求值
+    BiTree p=T;                                         //后序遍历方法
     if(!p)
         return 0;
     if(p->left_child) PartCalculate(p->left_child);
@@ -121,8 +121,8 @@ int PartCalculate(BiTree& T){
 }
 
 
-int Calculate(BiTree T,int* permu_var,int num){
-    int result[MAX_CHAR_NUM];
+int Calculate(BiTree T,int* permu_var,int num){        //计算布尔全排列的逻辑表达式值
+    int result[MAX_CHAR_NUM];                           //1为重言式，0为矛盾式，-1为可满足式
     int solution_T=0;
     int solution_F=0;
     BiTree p=T;

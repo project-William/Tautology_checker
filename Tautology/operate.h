@@ -8,23 +8,13 @@
 int m=0;
 enum Boolean{True,False};
 
-void Permutation(Boolean b[],int k,int n){
 
-}
 //操作模块函数
 void ExpressionVarible(char* expression,char* varibleList,int num);  //将表达式中的逻辑变量另外存储以便进行全排列取值
 void Transform(char* expression,Sqstack* s);                         //将用户输入的逻辑表达式转化为后缀表达式
 void ExpVarPermutation(char* varible_list);                         //逻辑变量的全排列
 
 
-void ExpressionVarible(char* expression,char* varibleList){
-    int i=0;
-    char c;
-    while(c<='Z'&&c>='A'){
-        c=expression[i++];
-        varibleList[c-48]=c;
-    }
-}
 //计算逻辑变量的全排列
 void ExpVarPermutation(Boolean b[],int var_num,int k,int permu_var[]){
     if(k == var_num){
@@ -103,11 +93,11 @@ void UserOper(int num,BiTree& T){
     InputElemVarible(elem_var,num);
     GiveValue(T,elem_var,num,0);
     PartCalculate(T);
-    printf("表达式值为：%d",PartCalculate(T));
+    printf("表达式值为：%d\n",PartCalculate(T));
 }
 
 void TautologyChecker(){
-    printf("请输入逻辑表达式：");
+    printf("\n请输入逻辑表达式：");
     char expression[MAX_CHAR_NUM];       //存储逻辑表达式
     char exp_var[MAX_CHAR_NUM]={0};
     int exp_num=0;                       //逻辑表达式长度
@@ -133,6 +123,8 @@ void TautologyChecker(){
         printf("\n");
         UserOper(mk,T);                  //可满足式的用户交互
     }
+    printf("\n");
+    fflush(stdin);
 }
 
 

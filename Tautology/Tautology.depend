@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1547450657 source:d:\tautology\main.cpp
+1547521074 source:d:\tautology\main.cpp
 	"introduction.h"
 	"operate.h"
 	"userDefine.h"
@@ -9,51 +9,49 @@
 	<stdlib.h>
 	"userDefine.h"
 
-1547449334 d:\tautology\introduction.h
+1547449336 d:\tautology\introduction.h
 	<stdio.h>
 
-1547450484 d:\tautology\user.h
+1547512275 d:\tautology\user.h
 	<stdio.h>
 
-1547450949 d:\tautology\operate.h
+1547521050 d:\tautology\operate.h
 	<math.h>
 	"userDefine.h"
 	"oper_biTree.h"
 	"user.h"
 
-1547450810 d:\tautology\oper_bitree.h
+1547512275 d:\tautology\oper_bitree.h
 	"userDefine.h"
 	"elem_stack.h"
-	<stdio.h>
 
-1547447475 source:d:\ke_cheng_she_ji\tautology\main.cpp
+1547521076 source:d:\ke_cheng_she_ji\tautology\main.cpp
 	"introduction.h"
 	"operate.h"
 	"userDefine.h"
 
-1547084621 d:\ke_cheng_she_ji\tautology\introduction.h
+1547449336 d:\ke_cheng_she_ji\tautology\introduction.h
 	<stdio.h>
 
-1547437698 d:\ke_cheng_she_ji\tautology\user.h
+1547512276 d:\ke_cheng_she_ji\tautology\user.h
 	<stdio.h>
 
-1547441636 d:\ke_cheng_she_ji\tautology\operate.h
+1547521052 d:\ke_cheng_she_ji\tautology\operate.h
 	<math.h>
 	"userDefine.h"
 	"oper_biTree.h"
 	"user.h"
 
-1547200316 d:\ke_cheng_she_ji\tautology\elem_stack.h
+1547200318 d:\ke_cheng_she_ji\tautology\elem_stack.h
 	<stdio.h>
 	<stdlib.h>
 	"userDefine.h"
 
-1547447575 d:\ke_cheng_she_ji\tautology\oper_bitree.h
+1547512276 d:\ke_cheng_she_ji\tautology\oper_bitree.h
 	"userDefine.h"
 	"elem_stack.h"
-	<stdio.h>
 
-1547427730 d:\ke_cheng_she_ji\tautology\userdefine.h
+1547427732 d:\ke_cheng_she_ji\tautology\userdefine.h
 
 1547427732 d:\tautology\userdefine.h
 

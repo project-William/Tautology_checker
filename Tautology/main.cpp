@@ -5,6 +5,14 @@
 
 int main(){
     Introduction();
-    TautologyChecker();      //é‡è¨€å¼æ£€æµ‹å‡½æ•°
+    char ch;
+    while(1){
+        printf("ÊÇ·ñ½øĞĞÖØÑÔÊ½ÅĞ±ğÊÔÑé(Y|N)£¿");
+        scanf("%c",&ch);
+        getchar();
+        if(ch=='N') break;
+        else TautologyChecker();
+
+    }
     return 0;
 }

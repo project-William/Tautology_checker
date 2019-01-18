@@ -2,22 +2,20 @@
 #define _OPER_BITREE_H_
 #include "userDefine.h"
 #include "elem_stack.h"
-#include <stdio.h>
-int mk=0;
 
+int mk=0;
 typedef struct Node{
     char elem;
     int value;
     struct Node* left_child;
     struct Node* right_child;
 }*BiTree,BiTreeNode;
-//äºŒå‰æ ‘æ¨¡å—å‡½æ•°
-void InitBiTree(BiTree& T);               //åˆå§‹åŒ–ä¸€ä¸ªæ ‘å¤´ç»“ç‚¹
-void CreateBiTree(Sqstack *s,BiTree& T);  //é€šè¿‡åç¼€è¡¨è¾¾å¼è¿›è¡Œè¡¨è¾¾å¼äºŒå‰æ ‘æ„å»º
-void PostOrderTraverse(BiTree& T);        //ååºéå†äºŒå‰æ ‘
+//¶ş²æÊ÷Ä£¿éº¯Êı
 
-
-
+void InitBiTree(BiTree& T);               //³õÊ¼»¯Ò»¸öÊ÷Í·½áµã
+void CreateBiTree(Sqstack *s,BiTree& T);  //Í¨¹ıºó×º±í´ïÊ½½øĞĞ±í´ïÊ½¶ş²æÊ÷¹¹½¨
+void PostOrderTraverse(BiTree& T,char* exp_var);//ºóĞò±éÀú¶ş²æÊ÷
+int PartCalculate(BiTree& T);//ºóĞò±éÀú·½·¨¼ÆËãµ¥´Î²¼¶ûÖµÅÅÁĞµÄ±í´ïÊ½Öµ²¢·µ»Ø¸ÃÖµ
 
 void InitBiTree(BiTree& T){
     T=(BiTree)malloc(sizeof(BiTreeNode));
@@ -60,7 +58,7 @@ void CreateBiTree(Sqstack *s,BiTree& T){
     T=new_node;
 }
 
-void PostOrderTraverse(BiTree& T,char* exp_var){         //ååºéå†äºŒå‰æ ‘å¹¶å°†é€»è¾‘å˜é‡å–å‡º
+void PostOrderTraverse(BiTree& T,char* exp_var){
     if(!T)
         return;
     else{
@@ -71,7 +69,7 @@ void PostOrderTraverse(BiTree& T,char* exp_var){         //ååºéå†äºŒå‰æ ‘
     }
 }
 
-void DiffVar(char*exp_var){                              //å»é™¤é‡å¤çš„é€»è¾‘å˜é‡
+void DiffVar(char*exp_var){
     int i,j,k;
     for(i=0;i<=mk-1;i++){
         for(j=i+1;j<=mk-1;j++){
@@ -86,7 +84,7 @@ void DiffVar(char*exp_var){                              //å»é™¤é‡å¤çš„é€»è¾‘
     }
 }
 
-void GiveValue(BiTree& T,int* permu_var,int num,int nk){ //ç»™ç½—åŸºå˜é‡èµ‹å€¼
+void GiveValue(BiTree& T,int* permu_var,int num,int nk){
     if(!T)
         return;
     GiveValue(T->left_child,permu_var,num,nk);
@@ -96,8 +94,8 @@ void GiveValue(BiTree& T,int* permu_var,int num,int nk){ //ç»™ç½—åŸºå˜é‡èµ‹å€¼
     }
 }
 
-int PartCalculate(BiTree& T){                           //å•æ¬¡å¸ƒå°”æ’åˆ—çš„é€»è¾‘è¡¨è¾¾å¼æ±‚å€¼
-    BiTree p=T;                                         //ååºéå†æ–¹æ³•
+int PartCalculate(BiTree& T){
+    BiTree p=T;
     if(!p)
         return 0;
     if(p->left_child) PartCalculate(p->left_child);
@@ -121,8 +119,8 @@ int PartCalculate(BiTree& T){                           //å•æ¬¡å¸ƒå°”æ’åˆ—çš„é
 }
 
 
-int Calculate(BiTree T,int* permu_var,int num){        //è®¡ç®—å¸ƒå°”å…¨æ’åˆ—çš„é€»è¾‘è¡¨è¾¾å¼å€¼
-    int result[MAX_CHAR_NUM];                           //1ä¸ºé‡è¨€å¼ï¼Œ0ä¸ºçŸ›ç›¾å¼ï¼Œ-1ä¸ºå¯æ»¡è¶³å¼
+int Calculate(BiTree T,int* permu_var,int num){
+    int result[MAX_CHAR_NUM];
     int solution_T=0;
     int solution_F=0;
     BiTree p=T;
